@@ -9,15 +9,21 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ dest: '/tmp/'}).array('image'));
 
-app.get('/index.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index.htm" );
+// app.get('/', function (req, res) {
+//    console.log(__dirname);
+//    res.send('Hello GET');
+// })
+
+app.get('/', function (req, res) {
+   res.sendFile( __dirname + "\\" + "index.html" );
+   // res.sendFile( __dirname + "/" + "index.htm" );
 })
 
 app.post('/file_upload', function (req, res) {
 
    console.log(req.files[0]);  // 上传的文件信息
 
-   var des_file = __dirname + "/" + req.files[0].originalname;
+   var des_file = __dirname + "/files/" + req.files[0].originalname;
    fs.readFile( req.files[0].path, function (err, data) {
         fs.writeFile(des_file, data, function (err) {
          if( err ){
