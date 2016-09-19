@@ -42,8 +42,11 @@ router.post('/file_upload', function (req, res) {
 // 下载
 router.post('/download', function (req, res,next) {
   console.log("start download");
-   var des_file = dPath + "/data/" + "gtslrouter.apk";
+   var des_file = dPath + "/data/" + "gtslApp.apk";
    res.download(des_file);
 })
 
+
+//required
 module.exports = router;
+
