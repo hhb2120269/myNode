@@ -11,11 +11,10 @@ var multer  = require('multer');
 
 // var route = require('./routes/router');
 var server = require('./servers/server');
+var socketServer = require('./socketServer');
 var fs = require('fs');
 
 
-
-// tool.setVersionArray();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +23,7 @@ app.use(multer({ dest: '/tmp/'}).array('image'));
 app.use('/',server);
 app.use('/file_upload',server);
 app.use('/download',server);
+//app.user('*',socketServer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

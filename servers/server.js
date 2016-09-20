@@ -25,6 +25,9 @@ router.get('/index.html', function (req, res) {
 router.get('/download', function (req, res) {
     res.sendFile( dPath + "/views/download.html" );
 });
+router.get('/download.html', function (req, res) {
+    res.sendFile( dPath + "/views/download.html" );
+});
 
 // 上传
 router.post('/file_upload', function (req, res) {
@@ -46,14 +49,14 @@ router.post('/file_upload', function (req, res) {
           res.end( JSON.stringify( response ) );
        });
    });
-})
+});
 
 // 下载
 router.post('/file_download', function (req, res,next) {
   console.log("start download");
    var des_file = dPath + "/data/" + "gtslApp_signed.apk";
    res.download(des_file);
-})
+});
 
 
 //required

@@ -1,5 +1,5 @@
 {
-  "name": "myNodeApp",
+  "name": "test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,23 @@
     "morgan": "^1.3.2",
     "redis": "",
     "serve-favicon": "^2.1.7",
+    "socket.io": "^1.4.8",
     "winston": "^2.2.0"
-  }
+  },
+  "description": "a test app server",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://hhb2120269@github.com/hhb2120269/myNode.git"
+  },
+  "keywords": [
+    "mascar"
+  ],
+  "author": "hhb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhb2120269/myNode/issues"
+  },
+  "homepage": "https://github.com/hhb2120269/myNode#readme"
 }
