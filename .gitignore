@@ -1,5 +1,7 @@
-#modules
-.node_modules
+
+#data file
+/data/
+#!/data/gtslApp_signed.apk
 
 # Logs
 logs
