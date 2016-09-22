@@ -28,6 +28,9 @@ router.get('/download', function (req, res) {
 router.get('/download.html', function (req, res) {
     res.sendFile( dPath + "/views/download.html" );
 });
+//router.get('/chat', function(req, res){
+//    res.sendFile(dPath + "/views/chat.html");
+//});
 
 // 上传
 router.post('/file_upload', function (req, res) {
