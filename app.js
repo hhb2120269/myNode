@@ -70,7 +70,7 @@ if (app.get('env') === 'development') {
             message: err.message,
             error: err
         });
-        /*Error: No default engine was specified and no extension was provided.*/
+        /*Error: No default engine was specified and no extension was provided.
         //res.render('error', {
         //    message: err.message,
         //    error: {}
@@ -86,7 +86,7 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-/*Error: No default engine was specified and no extension was provided.*/
+/*Error: No default engine was specified and no extension was provided.
     //res.render('error', {
     //    message: err.message,
     //    error: {}
@@ -126,3 +126,5 @@ io.on('connection', function(socket){
 http.listen(3000, function () {
     console.log('listening on *:'+3000);
 });
+
+*/
