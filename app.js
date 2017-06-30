@@ -33,9 +33,10 @@ app.use(multer({ dest: '/tmp/'}).array('image'));
 var http = require('http');  
 var qs = require('querystring'); 
 
-// tasks.dayTesk();
 // 定时任务
-tasks.secTask();
+tasks.dayTask();
+// tasks.test();
+// tasks.secTask();
 // 
 //页面的声明应在服务之前声明
 app.use('/',server);
@@ -88,9 +89,9 @@ app.use(function(err, req, res, next) {
 
 });
 
-app.listen(8081, function () {
-    console.log('listening on *:'+8081);
-});
+// app.listen(8081, function () {
+//     console.log('listening on *:'+8081);
+// });
 
 
 //socket模块
@@ -117,7 +118,7 @@ io.on('connection', function(socket){
 });
 
 //‘http’  must be ‘require('http').Server(app)’  否则找不到socket.io在html中的引用
-http.listen(3000, function () {
-    console.log('listening on *:'+3000);
-});
+// http.listen(3003, function () {
+//     console.log('listening on *:'+3003);
+// });
 
