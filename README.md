@@ -45,3 +45,6 @@ npm安装package.json时  直接转到当前项目目录下用命令
 
 ## Staff
 发生八阿哥什么的别慌，联系本人解决
+
+## PS:
+mac地址什么的都是写死到代码里面的，**/servers/task.js**中修改即可
