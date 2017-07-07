@@ -33,11 +33,12 @@ app.use(multer({ dest: '/tmp/'}).array('image'));
 var http = require('http');  
 var qs = require('querystring'); 
 
-// 定时任务
-tasks.dayTask();
+/* 定时签到任务*/
+tasks.dayTask();//task.js
 // tasks.test();
 // tasks.secTask();
 // 
+
 //页面的声明应在服务之前声明
 app.use('/',server);
 app.use('/file_upload',server);
@@ -89,12 +90,13 @@ app.use(function(err, req, res, next) {
 
 });
 
-// app.listen(8081, function () {
-//     console.log('listening on *:'+8081);
-// });
+/*主服务端口监听*/
+app.listen(8081, function () {
+    console.log('listening on *:'+8081);
+});
 
-
-//socket模块
+// todo:    
+/* socket模块 (未完成)*/
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
