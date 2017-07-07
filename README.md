@@ -20,7 +20,7 @@
 也可以在这里查看更多 http://www.runoob.com/nodejs/nodejs-install-setup.html
 
 
-## install安装（自动下载本程序所有引用包）
+## install安装（自动下载本地内部所有引用包）
 
 nodejs引用描述包的文件是**package.json**文件.
 npm安装package.json时  直接转到当前项目目录下用命令
