@@ -43,7 +43,7 @@ npm安装package.json时  直接转到当前项目目录下用命令
 
 命令语法及使用 https://github.com/nodejitsu/forever
 
-## Staff
+## Stuff
 发生八阿哥什么的别慌，联系本人解决
 
 ## PS:
