@@ -4,7 +4,7 @@
 **环境配置、install安装、forever后台运行、**
 其中forever后台运行非必需配置，需要常驻后台的童鞋可以尝试
 
-## 环境配置
+## 环境配置（安装Nodejs）
 
 程序由nodejs编写 以下搬运自猴子也能看得懂的度熊🐻
 >1、windows下的NodeJS安装是比较方便的（v0.6.0版本之后，支持windows native），只需要登陆官网（http://nodejs.org）
@@ -20,7 +20,7 @@
 也可以在这里查看更多 http://www.runoob.com/nodejs/nodejs-install-setup.html
 
 
-## install安装
+## install安装（自动下载本程序所有引用包）
 
 nodejs引用描述包的文件是**package.json**文件.
 npm安装package.json时  直接转到当前项目目录下用命令
@@ -28,7 +28,7 @@ npm安装package.json时  直接转到当前项目目录下用命令
 或
 **npm install --save-dev**安装即可，自动将package.json中的模块安装到node-modules文件夹下（本地）
 
-## forever后台运行
+## forever后台运行（嘿嘿嘿）
  nodejs一般是当成一条用户命令执行的，当用户断开客户连接，运用也就停了，很烦人。如何让nodejs应用当成服务，在后台执行呢？
 
 最简单的办法：
