@@ -10,7 +10,8 @@ var obj = {
 },
 dayTask:function(taskContent){
    var rule = new schedule.RecurrenceRule();
-   　　rule.dayOfWeek = [0, new schedule.Range(1, 5)];//day of week (0 - 7) (0 or 7 is Sun)
+   // 　　rule.dayOfWeek = [1, new schedule.Range(1, 5)];//day of week (0 - 7) (0 or 7 is Sun)
+   　　rule.dayOfWeek = [1,2,3,4,5];//day of week (0 - 7) (0 or 7 is Sun)
 
       //
    　　rule.hour = 8;
@@ -18,6 +19,9 @@ dayTask:function(taskContent){
 
 
    var j = schedule.scheduleJob(rule, function(){
+    console.log("dayTask:");
+    console.log(new Date());
+
     var r1= Math.random();
     var r2 = Math.random();
     var sec = (r1*10+r2)*1000*30;//36000000
@@ -109,7 +113,7 @@ function showStringArray(body){
     if(tag instanceof Array){
         for (var i = 0; i < tag.length; i++) {
             var flag = tag[i];
-            if(typeof flag == "string" && flag.length ==3){
+            if(typeof flag == "string" && (flag.indexOf("签到")||flag.indexOf("MAC地址"))){
                 arr.push(flag);
             }
         };
