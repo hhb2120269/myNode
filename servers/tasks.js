@@ -1,24 +1,30 @@
 
 var schedule = require("node-schedule");
 var obj = {
-	test:function(){
+  test:function(){
         contentDef(0);
-		// var date = new Date();
-		// var j = schedule.scheduleJob(date, function(){console.log("执行任务");});
-  //   	//取消任务
-  //   	j.cancel();
+    // var date = new Date();
+    // var j = schedule.scheduleJob(date, function(){console.log("执行任务");});
+  //    //取消任务
+  //    j.cancel();
 },
 dayTask:function(taskContent){
    var rule = new schedule.RecurrenceRule();
-   　　rule.dayOfWeek = [0, new schedule.Range(1, 6)];
+   // 　　rule.dayOfWeek = [1, new schedule.Range(1, 5)];//day of week (0 - 7) (0 or 7 is Sun)
+   　　rule.dayOfWeek = [1,2,3,4,5];//day of week (0 - 7) (0 or 7 is Sun)
+
+      //
    　　rule.hour = 8;
    　　rule.minute = 22;
 
 
    var j = schedule.scheduleJob(rule, function(){
+    console.log("dayTask:");
+    console.log(new Date());
+
     var r1= Math.random();
     var r2 = Math.random();
-    var sec = (r1*10+r2)*3000*10;
+    var sec = (r1*10+r2)*1000*30;//36000000
     setTimeout(function(){
         console.log("执行任务:");
         if(!taskContent){
@@ -64,21 +70,21 @@ secTask:function(taskContent){
 var request = require("request"); 
 
 function contentDef(sec){
-	console.log("default taskContent");
-	var options = { 
-		method: 'POST',
-		url: 'http://10.166.41.23/byxx/login.action',
-		headers: { 
-			'postman-token': '3342370a-7066-3ef8-fd7c-e49a9be8ac94',
-			'content-type': 'multipart/form-data; boundary=---011000010111000001101001' ,
-			// 'content-type': 'multipart/form-data;',
-			// 'cache-control': 'no-cache'
-		},
-		formData: { 
-			upName: '贺弘博',
-			upPassword: '1',
-			macAddress: '50:7B:9D:5C:52:2B' 
-		},
+  console.log("default taskContent");
+  var options = { 
+    method: 'POST',
+    url: 'http://10.166.41.23/byxx/login.action',
+    headers: { 
+      'postman-token': '3342370a-7066-3ef8-fd7c-e49a9be8ac94',
+      'content-type': 'multipart/form-data; boundary=---011000010111000001101001' ,
+      // 'content-type': 'multipart/form-data;',
+      // 'cache-control': 'no-cache'
+    },
+    formData: { 
+      upName: '贺弘博',
+      upPassword: '1',
+      macAddress: '50:7B:9D:5C:52:2B' 
+    },
         followRedirect:true,
         followAllRedirects:true,
         followOriginalHttpMethod:true
@@ -86,8 +92,8 @@ function contentDef(sec){
 
     request(options, function (error, response, body) {
 
-		// console.log("safdasdfasdf");
-		if (!error && response.statusCode == 200) {
+    // console.log("safdasdfasdf");
+    if (!error && response.statusCode == 200) {
             console.log(showStringArray(body)); // Print the google web page.
         }else{
            console.log("there is an error:"+error+"\n"
@@ -107,7 +113,7 @@ function showStringArray(body){
     if(tag instanceof Array){
         for (var i = 0; i < tag.length; i++) {
             var flag = tag[i];
-            if(typeof flag == "string" && flag.length ==3){
+            if(typeof flag == "string" && (flag.indexOf("签到")||flag.indexOf("MAC地址"))){
                 arr.push(flag);
             }
         };
