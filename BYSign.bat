@@ -1,0 +1,1 @@
+forever -p "C:\Users\種精痔\Desktop\MyNode\myNode" -l "C:\Users\種精痔\.forever\logs\access.log" -e "C:\Users\種精痔\.forever\logs\error.log" -a -w start app.js

@@ -15,8 +15,10 @@ dayTask:function(taskContent){
 
       //
    　　rule.hour = 8;
-   　　rule.minute = 22;
-
+   　　rule.minute = 20;
+//test
+// console.log("dayTask:");
+// contentDef(0);
 
    var j = schedule.scheduleJob(rule, function(){
     console.log("dayTask:");
@@ -29,6 +31,7 @@ dayTask:function(taskContent){
         console.log("执行任务:");
         if(!taskContent){
             contentDef(parseInt(sec));
+            // console.log("测试每天使用状态:");
                     // delayTest(sec);
                 }else{
                     taskContent();
@@ -113,8 +116,10 @@ function showStringArray(body){
     if(tag instanceof Array){
         for (var i = 0; i < tag.length; i++) {
             var flag = tag[i];
-            if(typeof flag == "string" && (flag.indexOf("签到")||flag.indexOf("MAC地址"))){
+            if(typeof flag == "string" ){
+              if(flag.indexOf("签到")>0||flag.indexOf("MAC")>0){
                 arr.push(flag);
+              }
             }
         };
     }
