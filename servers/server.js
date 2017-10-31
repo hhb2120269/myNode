@@ -130,7 +130,7 @@ router.post('/posttest', function (req, res,next) {
         data:data,
         message:message,
         status:status,
-        code,code
+        code:code
       };
 
       return obj;
